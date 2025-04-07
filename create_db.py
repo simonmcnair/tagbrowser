@@ -1,7 +1,7 @@
 import sqlite3
 import os
 
-def create_db()
+def create_db():
     if os.path.exists('photo_gallery.db'):
         print(f"Database photo_gallery.db already exists. Skipping creation.")
     else:
