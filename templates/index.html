@@ -6,6 +6,9 @@
     <title>Photo Gallery</title>
 </head>
 <body>
+    {% include 'header.html' %}
+   
+
     <h1>Photo Gallery</h1>
     <div>
         {% for filename, tags in photo_tags.items() %}
@@ -27,5 +30,6 @@
             </div>
         {% endfor %}
     </div>
+    {% include 'footer.html' %}
 </body>
 </html>
