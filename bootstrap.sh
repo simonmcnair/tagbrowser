@@ -21,3 +21,5 @@ echo "Setting up SQLite database and schema..."
 python create_db.py  # You can change this to whatever script initializes your DB
 
 echo "Project bootstrapped successfully!"
+
+python app.py
