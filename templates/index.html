@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+</head>
+<body>
+    <h1>Photo Gallery</h1>
+    <div>
+        {% for filename, tags in photo_tags.items() %}
+            <div>
+                <h2>{{ filename }}</h2>
+                <ul>
+                    {% for tag in tags %}
+                        <li>
+                            {{ tag }} 
+                            <a href="{{ url_for('remove_tag', filename=filename, tag=tag) }}">Remove</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <form action="{{ url_for('add_tag', filename=filename) }}" method="POST">
+                    <label for="tag">Add Tag:</label>
+                    <input type="text" name="tag" id="tag">
+                    <button type="submit">Add Tag</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
